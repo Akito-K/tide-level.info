@@ -45,7 +45,7 @@
         <h1><a href="/">日本の潮位情報</a></h1>
         <ul class="lists navi__lists navi">
             <li class="list navi__list list--monospaced"><a class="navi__list__btn" href="/"><i class="fa fa-home"></i><span class="navi__text">HOME</span></a></li>
-            <li class="list navi__list list--monospaced"><a class="navi__list__btn" href="/contact/"><i class="fa fa-envelope-o"></i><span class="navi__text">CONTACT</span></a></li>
+            <li class="list navi__list list--monospaced"><a class="navi__list__btn" href="#"><i class="fa fa-envelope-o"></i><span class="navi__text">CONTACT</span></a></li>
 
             <li class="list navi__list list--monospaced">
                 <a class="navi__list__btn" href="#" id="trigChangeSkin" data-skin="{{ $skin }}">
