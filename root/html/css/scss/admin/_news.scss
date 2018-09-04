@@ -1,0 +1,26 @@
+// 共通
+@media all {
+    .news {
+        &__list {
+            &__date {
+                width: 12%;
+            }
+            &__title {
+                width: 15%;
+            }
+            &__body {
+                width: 40%;
+            }
+        }
+    }
+}
+
+// スマホ
+@media(max-width: 767px) {
+}
+// TAB
+@media(min-width: 768px) and (max-width: 999px) {
+}
+// PC
+@media(min-width: 1000px){
+}

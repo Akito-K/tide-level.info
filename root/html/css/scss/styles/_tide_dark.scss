@@ -1,0 +1,76 @@
+.tide {
+    &__simple {
+        &__box {
+            table {
+                border-color: #999;
+            }
+            th,
+            td {
+                border-top-color: #999;
+                border-bottom-color: #999;
+                border-left-color: #999;
+                border-right-color: #999;
+                color: #bbb;
+            }
+            th {
+                background-color: #111;
+            }
+            tr:nth-child(2n) {
+                background-color: #333;
+            }
+            tr:nth-child(2n-1) {
+                background-color: #222;
+            }
+        }
+    }
+    &__detail {
+        &__box {
+            table {
+                border-color: #999;
+            }
+            th,
+            td {
+                border-top-color: #999;
+                border-bottom-color: #999;
+                border-left-color: #999;
+                border-right-color: #999;
+                color: #bbb;
+            }
+            th {
+                background-color: #111;
+            }
+            tr:nth-child(4n),
+            tr:nth-child(4n-1) {
+                background-color: #333;
+            }
+            tr:nth-child(4n-2) ,
+            tr:nth-child(4n-3) {
+                background-color: #222;
+            }
+        }
+    }
+}
+
+.max {
+    &--simple {
+        background-color: #350000;
+    }
+    &--detail {
+        background-color: #730000;
+    }
+}
+.min {
+    &--simple {
+        background-color: #00142d;
+    }
+    &--detail {
+        background-color: #123f77;
+    }
+}
+.tide__detail__box td.max--detail,
+.tide__detail__box td.min--detail {
+    color: #fff;
+}
+
+
+

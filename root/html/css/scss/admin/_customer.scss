@@ -1,0 +1,245 @@
+// 共通
+@media all {
+    .customer {
+        &__boxes {
+            @include flexbox();
+            @include flexWrap(wrap);
+        }
+        &__box {
+            display: block;
+            box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.2);
+            background-color: #fff;
+            color: #484848;
+            border-radius: 5px;
+            @include transition(0.2);
+            &:hover {
+                text-decoration: none;
+                color: #484848;
+                box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
+            }
+            &--board {
+                position: relative;
+                background-color: #eeffe0;
+                border: 1px solid #56c519;
+            }
+            &--note {
+                background-color: #fff0d5;
+                border: 1px solid #f7cc81;
+            }
+            &__lists {
+                @include flexbox();
+                @include flexAlign(center);
+                margin-bottom: 0;
+            }
+            &__list {
+                &--img {
+                }
+                &--info {
+                    box-sizing: border-box;
+                    p {
+                        margin: 0;
+                        padding: 3px 0;
+                    }
+                }
+                &__id {
+                    font-size: 80%;
+                }
+                &__img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 5px 0 0 5px;
+                    @include bgCover();
+                }
+                &__name {
+                    font-size: 180%;
+                    font-weight: bold;
+                    &__san {
+                        font-size: 50%;
+                    }
+                }
+                &__facility {
+                    font-size: 73%;
+                }
+                &__buttons {
+                    @include flexbox();
+                }
+                &__button {
+                    width: 50%;
+                    margin: 0 3px;
+                }
+            }
+        }
+
+        &__block {
+            &__lists {
+                @include flexbox();
+                @include flexAlign(center);
+                margin-bottom: 30px;
+            }
+            &__list {
+                &--img {
+                    position: relative;
+                    height: 0;
+                }
+                &--info {
+                    box-sizing: border-box;
+                    p {
+                        margin: 0;
+                        padding: 3px 0;
+                    }
+                }
+                &__img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    @include bgCover();
+                    border: 1px solid #ddd;
+                    box-sizing: border-box;
+                }
+                &__kana {
+                    font-weight: bold;
+                }
+                &__name {
+                    font-weight: bold;
+                }
+            }
+            &__buttons {
+                @include flexbox();
+                @include flexJustify(space-between);
+            }
+            &__button {
+                width: 50%;
+                margin: 10px;
+            }
+        }
+
+    }
+}
+
+// スマホ
+@media(max-width: 767px) {
+    .customer {
+        &__box {
+            width: 300px;
+            margin: 15px;
+            &__list {
+                &--img {
+                    width: 100px;
+                    height: 100px;
+                }
+                &--info {
+                    width: calc(100% - 100px);
+                    padding-left: 10px;
+                }
+            }
+        }
+
+        &__block {
+            width: 100%;
+            &__list {
+                &--img {
+                    width: 35%;
+                    padding-top: 50%;
+                }
+                &--info {
+                    width: 65%;
+                    padding-left: 10px;
+                }
+                &__kana {
+                    font-size: 100%;
+                }
+                &__name {
+                    font-size: 180%;
+                    &__san {
+                        font-size: 50%;
+                    }
+                }
+                &__age {
+                    font-size: 100%;
+                }
+                &__facility {
+                    font-size: 80%;
+                }
+                &__blood {
+                    font-size: 150%;
+                    &__gata {
+                        font-size: 50%;
+                    }
+                }
+                &__email,
+                &__tel {
+                    font-size: 80%;
+                }
+            }
+            &__button {
+                .btn {
+                    font-size: 100%;
+                }
+            }
+        }
+    }
+}
+// TAB・PC
+@media(min-width: 768px){
+    .customer {
+        &__box {
+            width: 300px;
+            margin: 15px;
+            &__list {
+                &--img {
+                    width: 100px;
+                    height: 100px;
+                }
+                &--info {
+                    width: calc(100% - 100px);
+                    padding-left: 10px;
+                }
+            }
+        }
+
+        &__block {
+            width: 100%;
+            max-width: 800px;
+            margin-left: 50px;
+            &__list {
+                &--img {
+                    width: 300px;
+                    height: 400px;
+                }
+                &--info {
+                    width: calc(100% - 300px);
+                    padding-left: 50px;
+                }
+                &__kana {
+                    font-size: 200%;
+                }
+                &__name {
+                    font-size: 360%;
+                    &__san {
+                        font-size: 50%;
+                    }
+                }
+                &__age {
+                    font-size: 200%;
+                }
+                &__facility {
+                    font-size: 160%;
+                }
+                &__blood {
+                    font-size: 300%;
+                    &__gata {
+                        font-size: 50%;
+                    }
+                }
+                &__email,
+                &__tel {
+                    font-size: 160%;
+                }
+            }
+        }
+    }
+}

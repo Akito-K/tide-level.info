@@ -1,0 +1,15 @@
+/* ================================================================================== */
+/* Web fonts */
+/* ================================================================================== */
+@font-face{
+    font-family: 'hui';
+    src: url('../fonts/HuiFontP109/HuiFontP109.eot');
+    src: url('../fonts/HuiFontP109/HuiFontP109.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/HuiFontP109/HuiFontP109.woff') format('woff'),
+    url('../fonts/HuiFontP109/uiFontP109.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.hui {
+    font-family: "hui";
+}

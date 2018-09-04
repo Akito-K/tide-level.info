@@ -1,0 +1,35 @@
+// 共通
+@media all {
+    .template {
+        &__box {
+            padding: 10px 30px;
+            &__title {
+                font-weight: bold;
+                color: #666;
+                margin-bottom: 10px;
+            }
+            &__body {
+                border: 1px solid #aaa;
+                padding: 10px;
+                min-height: 150px;
+                border-radius: 6px;
+                background-color: #f9f9f9;
+                color: #666;
+            }
+            &__textarea {
+                padding: 10px;
+                min-height: 150px;
+            }
+        }
+        textarea.form-control {
+            height: 0;
+        }
+    }
+}
+
+// スマホ
+@media(max-width: 767px) {
+}
+// TAB・PC
+@media(min-width: 768px){
+}

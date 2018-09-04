@@ -1,0 +1,40 @@
+a {
+    color: #ccc;
+}
+
+input[readonly],
+select {
+    border-color: #ccc;
+    background-color: #16161f;
+}
+
+body {
+    color: #ccc;
+}
+.wrapper {
+    background-color: #1f2025;
+}
+
+.navi {
+    &__lists {
+        border-top-color: #304a5d;
+        border-bottom-color: #304a5d;
+    }
+    &__list {
+        border-right-color: #304a5d;
+        &__btn {
+            background-color: #16161f;
+        }
+    }
+}
+h2 {
+    border-top-color: #000;
+    border-bottom-color: #000;
+    background-color: #072d13;
+}
+
+.footer {
+    &__copyright {
+        background-color: #16161f;
+    }
+}

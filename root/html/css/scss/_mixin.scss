@@ -1,0 +1,142 @@
+//clearfix
+@mixin clearfix(){
+    clear: both;
+    min-height: 0;
+    &:after {
+        content: ".";
+        display: block;
+        visibility: hidden;
+        height: 0;
+        font-size: .1em;
+        line-height: 0;
+        clear: both;
+    }
+}
+
+@mixin pcMenuHover(){
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,00b4e1+87 */
+    background: #ffffff; /* Old browsers */
+    background: -moz-linear-gradient(top,  #ffffff 0%, #00b4e1 87%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #ffffff 0%,#00b4e1 87%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #ffffff 0%,#00b4e1 87%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00b4e1',GradientType=0 ); /* IE6-9 */
+}
+
+
+@mixin fa(){
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin mincho(){
+    font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "ＭＳ 明朝", serif;
+}
+
+@mixin fsize($num:14, $base:14){
+    $size: $num/$base;
+    font-size: percentage($size);
+}
+
+@mixin transition($sec:0.2) {
+    -webkit-transition: all #{$sec}s ease-in-out;
+    -moz-transition: all #{$sec}s ease-in-out;
+    -ms-transition: all #{$sec}s ease-in-out;
+    -o-transition: all #{$sec}s ease-in-out;
+    transition: all #{$sec}s ease-in-out;
+}
+
+@mixin flexbox($important:""){
+    @if $important == "!" {
+        display: -webkit-box !important;// Androidブラウザ
+        display: -ms-flexbox !important;// IE10
+        display: -webkit-flex !important;// safari（PC）
+        display: flex !important;
+    } @else {
+        display: -webkit-box;// Androidブラウザ
+        display: -ms-flexbox;// IE10
+        display: -webkit-flex;// safari（PC）
+        display: flex;
+    }
+}
+
+@mixin flex($num){
+    -webkit-box: $num;// Androidブラウザ
+    -ms-flexbox: $num;// IE10
+    -webkit-flex: $num;// safari（PC）
+    flex: $num;
+}
+
+@mixin flexJustify($val){
+    @if $val == space-between {
+        -webkit-box-pack: justify;// Androidブラウザ
+        -ms-flex-pack: justify;// IE10
+        -webkit-justify-content: space-between;// safari（PC）
+        justify-content: space-between;
+    } @else {
+        -webkit-box-pack: $val;// Androidブラウザ
+        -ms-flex-pack: $val;// IE10
+        -webkit-justify-content: $val;// safari（PC）
+        justify-content: $val;
+    }
+}
+
+@mixin flexAlign($val){
+    -webkit-box-align: $val;// Androidブラウザ
+    -ms-flex-align: $val;// IE10
+    -webkit-align-items: $val;// safari（PC）
+    align-items: $val;
+}
+
+@mixin flexWrap($val){
+    -ms-flex-wrap: $val;// IE10
+    -ms-flexbox-wrap: $val;// IE10
+    -webkit-flex-wrap: $val;// safari（PC）
+    flex-wrap: $val;
+}
+
+@mixin flexDirection($val){
+    -webkit-flex-direction: $val;/*--- safari（PC）用 ---*/
+    flex-direction: $val;
+}
+
+@mixin transform($val){
+    -webkit-transform: $val;
+    -moz-transform: $val;
+    -ms-transform: $val;
+    -o-transform: $val;
+    transform: $val;
+}
+
+@mixin transform-origin($val){
+    -webkit-transform-origin: $val;
+    -moz-transform-origin: $val;
+    -ms-transform-origin: $val;
+    -o-transform-origin: $val;
+    transform-origin: $val;
+}
+
+
+@mixin bgCover() {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+@mixin bgContain() {
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+@mixin alpha($num) {
+    filter: alpha(opacity=$num);
+    -moz-opacity: $num/100;
+    opacity: $num/100;
+}
+
+
+

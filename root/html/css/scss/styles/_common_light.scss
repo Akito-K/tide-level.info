@@ -1,0 +1,43 @@
+a {
+    color: #2f69b3;
+}
+.navi a {
+    color: #fff;
+}
+
+input[readonly],
+select {
+    border-color: #ccc;
+    background-color: #ffffff;
+}
+
+body {
+    color: #333;
+}
+.wrapper {
+    background-color: #fff;
+}
+
+.navi {
+    &__lists {
+        border-top-color: #304a5d;
+        border-bottom-color: #304a5d;
+    }
+    &__list {
+        border-right-color: #304a5d;
+        &__btn {
+            background-color: #4ab0ff;
+        }
+    }
+}
+h2 {
+    border-top-color: #37a51a;
+    border-bottom-color: #37a51a;
+    background-color: #ddffd4;
+}
+
+.footer {
+    &__copyright {
+        background-color: #aadaff;
+    }
+}

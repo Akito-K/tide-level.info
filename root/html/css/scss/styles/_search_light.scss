@@ -1,0 +1,18 @@
+.search {
+    border-color: #aadaff;
+    background-color: #eaf6ff;
+    &__week {
+        &__param {
+            background-color: #ffffff;
+            border-color: #aaa;
+            &.selected {
+                background-color: #ffdfb0;
+                color: #131321;
+            }
+        }
+    }
+}
+
+
+
+

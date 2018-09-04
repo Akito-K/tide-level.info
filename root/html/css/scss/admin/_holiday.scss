@@ -1,0 +1,125 @@
+// 共通
+@media all {
+    .holiday {
+        &__boxes {
+            @include flexbox();
+        }
+        &__box {
+            width: 50%;
+            margin: 10px;
+            &__title {
+                @include fsize(16);
+            }
+            &__cell {
+                &--year {
+                    width: 20%;
+                }
+                &--month {
+                    width: 20%;
+                }
+                &--day {
+                }
+            }
+        }
+
+        &__calendar__btns {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+        }
+        &__calendar {
+            margin-bottom: 20px;
+            &__header {
+                padding: 0 5px 3px;
+                border: 1px solid #eee;
+            }
+            &__header__year {
+                color: #999;
+                font-weight: bold;
+                padding-right: 5px;
+            }
+            &__header__month {
+                font-size: 150%;
+                font-weight: bold;
+            }
+            &__body__table {
+                width: 100%;
+                th, td {
+                    padding: 1px;
+                    text-align: center;
+                    background-color: #eee;
+                    border: 1px solid #fff;
+                }
+                th {
+                    font-size: 70%;
+                    font-weight: normal;
+                    &.wday-0 {
+                        color: #e60;
+                    }
+                    &.wday-6 {
+                        color: #4573af;
+                    }
+                }
+                td {
+                    cursor: pointer;
+                    &.other-month {
+                        opacity: 0.2;
+                    }
+                    &.lo-holiday {
+                        color: #e60;
+                    }
+                    &:hover {
+                        background-color: #f99;
+                        color: #000
+                    }
+//                    &.add {
+//                        background-color: #f66;
+//                        color: #fff;
+//                    }
+//                    &.lo-holiday.sub {
+//                        background-color: #bbb;
+//                        color: #333;
+//                    }
+                    &[data-holiday="both"] {
+                        background-color: #f66;
+                        color: #fff;
+                    }
+                    &[data-holiday="desk"] {
+                        background-color: #666cff;
+                        color: #fff;
+                    }
+                    &[data-holiday="factory"] {
+                        background-color: #59b152;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+
+        .btn {
+            border-color: #ccc;
+            &:hover {
+                opacity: 0.85;
+            }
+            &[data-flag="both"] {
+                background-color: #f66;
+            }
+            &[data-flag="desk"] {
+                background-color: #666cff;
+            }
+            &[data-flag="factory"] {
+                background-color: #59b152;
+            }
+        }
+    }
+
+}
+// スマホ
+@media(max-width: 767px) {
+}
+// TAB
+@media(min-width: 768px) and (max-width: 999px) {
+}
+// PC
+@media(min-width: 1000px){
+}

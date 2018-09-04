@@ -1,0 +1,117 @@
+// 共通
+@media all {
+    .chart {
+        &__table {
+            width: 100%;
+            tr {
+                &.cate {
+                    &--1 {
+                        background-color: #f6f6f6;
+                    }
+                }
+            }
+            th, td {
+                padding: 10px 5px;
+                border: 1px solid #ccc;
+                @include fsize(14);
+            }
+            &__title {
+                width: 15%;
+            }
+            &__checkbox {
+                text-align: center;
+                input {
+                    transform: scale(1.8);
+                }
+            }
+        }
+
+        &__boxes {
+            border: 2px solid #333;
+            margin-bottom: 30px;
+        }
+
+        &__view {
+            width: 100%;
+            max-width: 1000px;
+            position: relative;
+            padding-top: 40px;
+            &--customer {
+                max-width: 100%;
+            }
+            &__tab {
+                position: absolute;
+                @include flexbox();
+                z-index: 2;
+                height: 41px;
+                top: 0;
+                &__body {
+                    width: auto;
+                    font-size: 80%;
+                    margin-right: 5px;
+                    padding: 10px 30px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px 5px 0 0;
+                    text-align: center;
+                    background-color: #eee;
+                    cursor: pointer;
+                    &:hover {
+                        opacity: 0.8;
+                    }
+                    &.selected {
+                        border-bottom-color: #fff;
+                    }
+                    &--temperture {
+                        background-color: #f3ca12;
+                    }
+                    &--pressure {
+                        background-color: #ffa1a1;
+                    }
+                    &--pulse {
+                        background-color: #e1a9f9;
+                    }
+                    &--meal {
+                        background-color: #c7e682;
+                    }
+                    &--weight {
+                        background-color: #a7e5ff;
+                    }
+                }
+            }
+
+            &__boxes {
+                padding: 20px;
+                border: 1px solid #ccc;
+                width: 100%;
+                box-sizing: border-box;
+                margin-bottom: 30px;
+            }
+
+            &__box {
+                display: none;
+                &[data-key="0"],
+                &[data-key="temperature"] {
+                    display: block;
+                }
+                &.show {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+// スマホ
+@media(max-width: 767px) {
+    .chart {
+        &__page {
+            &--view {
+                @include fsize(14);
+            }
+        }
+    }
+}
+
+// TAB・PC
+@media(min-width: 768px){
+}

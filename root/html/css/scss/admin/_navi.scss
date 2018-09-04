@@ -1,0 +1,30 @@
+// 共通
+@media all {
+    .navi {
+        &__list {
+            &__parent {
+                display: block;
+                color: #fff;
+                padding: 12px 5px 12px 15px;
+                background-color: #192429;
+            }
+        }
+    }
+
+    .sidebar-menu>li.navi__list--child>a {
+        padding: 11px 5px 11px 30px;
+    }
+    .sidebar-menu>li.navi__list--logout>a {
+        margin-top: 30px;
+    }
+}
+
+// スマホ
+@media(max-width: 767px) {
+}
+// TAB
+@media(min-width: 768px) and (max-width: 999px) {
+}
+// PC
+@media(min-width: 1000px){
+}

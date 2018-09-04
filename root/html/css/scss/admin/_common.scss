@@ -1,0 +1,278 @@
+// 共通
+@media all {
+    .account-icon {
+        @include bgCover();
+        border-radius: 50%;
+        &--01 {
+            width: 45px;
+            height: 45px;
+        }
+        &--02 {
+            width: 25px;
+            height: 25px;
+        }
+        &--03 {
+            width: 90px;
+            height: 90px;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+    label {
+        font-weight: normal;
+        &:hover {
+            font-weight: bold;
+            cursor: pointer;
+        }
+    }
+    .checkbox-group {
+        padding: 0 10px;
+        input[type="checkbox"] {
+            transform: scale(1.4);
+        }
+    }
+    .form-control {
+        &--mini {
+            display: inline-block;
+        }
+        &--10 { width: 10%; }
+        &--20 { width: 20%; }
+        &--30 { width: 30%; }
+        &--40 { width: 40%; }
+        &--50 { width: 50%; }
+        &--60 { width: 60%; }
+        &--70 { width: 70%; }
+        &--80 { width: 80%; }
+        &--90 { width: 90%; }
+    }
+    .not-btn {
+        background: none;
+        border: none;
+        color: #337ab7;
+        text-decoration: none;
+        &:hover {
+            color: #23527c;
+            text-decoration: underline;
+        }
+        &:focus {
+            outline: none;
+        }
+        .fa {
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+    .fake-anchor {
+        color: #ccc;
+        text-decoration: underline;
+    }
+
+    .header {
+        &__account {
+            &__wrap {
+                @include flexbox("!");
+                @include flexAlign(center);
+            }
+            &__child {
+                display: block;
+                &:first-child {
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+
+    .ajaxing {
+        display: none;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.4);
+        z-index: 1000;
+        text-align: center;
+        &__block {
+            display: table;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        &__box {
+            display: table-cell;
+            width: 100%;
+            vertical-align: middle;
+            &__body {
+                padding: 10px;
+                color: #fff;
+                text-align: center;
+                @include fsize(30);
+            }
+            &__icon {
+                @include fsize(80);
+                .fa {
+                    color: #fff;
+                }
+            }
+        }
+        &__cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1100;
+        }
+
+        &__upload-box {
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            &__drag-area {
+                line-height: 100px;
+                border: 4px dashed #ccc;
+                border-radius: 10px;
+                margin-bottom: 20px;
+            }
+            &__btn-input {
+            }
+            &__fake-input {
+                display: none !important;
+            }
+        }
+    }
+
+    .content {
+        &__body {
+            position: relative;
+        }
+    }
+
+    .staff-icon {
+        border-radius: 50%;
+        max-width: 90px;
+    }
+
+    .area-calendar--input {
+        position: fixed;
+        z-index: 10000;
+        width: 300px;
+        padding: 15px;
+        background-color: #fff;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        .calendar__header {
+            margin-bottom: 5px;
+            &__title {
+                text-align: center;
+                font-size: 110%;
+                letter-spacing: 0.1em;
+            }
+            &__btn {
+                text-align: center;
+                .fa {
+                    font-size: 160%;
+                    cursor: pointer;
+                    &:hover {
+                        color: #ccc;
+                    }
+                }
+            }
+        }
+        .calendar__body__table {
+            width: 100%;
+            th, td {
+                text-align: center;
+                border: 1px solid #fff;
+                background-color: #eee;
+                padding: 2px 0;
+            }
+            td {
+                cursor: pointer;
+                &.other-month {
+                    opacity: 0.5;
+                }
+                &:hover {
+                    background-color: #666;
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    .pagenation {
+        width: 100%;
+        max-width: 600px;
+        margin: 10px auto;
+        padding: 10px;
+        text-align: center;
+        &__buttons {
+            &__btn {
+                width: 150px;
+            }
+        }
+        &__numbers {
+            font-size: 120%;
+            &__num {
+                display: inline-block;
+                padding: 5px 10px;
+                &--current {
+                    font-size: 120%;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+/*
+    .auth-9,
+    .auth-3,
+    .auth-2,
+    .auth-1 {
+        .auth-hide {
+            display: none;
+        }
+    }
+    .auth-99,
+    .auth-5,
+    .auth-4 {
+        tr.auth-hide th,
+        tr.auth-hide td,
+        th.auth-hide,
+        td.auth-hide,
+        p.auth-hide,
+        span.auth-hide {
+            background-color: #fcc;
+        }
+        p.auth-hide {
+            padding: 6px;
+        }
+    }
+*/
+    table {
+        width: 100%;
+        margin-bottom: 30px;
+        tr {
+            &:hover {
+                td {
+                    background-color: #f9f9f9;
+                }
+            }
+        }
+        th,
+        td {
+            padding: 6px 12px;
+            border: 1px solid #ddd;
+        }
+    }
+
+}
+// スマホ
+@media(max-width: 767px) {
+}
+// TAB
+@media(min-width: 768px) and (max-width: 999px) {
+}
+// PC
+@media(min-width: 1000px){
+}

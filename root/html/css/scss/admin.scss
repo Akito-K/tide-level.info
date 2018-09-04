@@ -1,0 +1,33 @@
+@import "mixin";
+
+@import "font-awesome.min";
+@import "huifont";
+@import "ionicons";
+
+@import "reset";
+@import "bootstrap.min";
+
+@import "default";
+@import "calendar";
+
+@import "admin/navi";
+@import "admin/common";
+@import "admin/dashboard";
+//@import "admin/holiday";
+@import "admin/news";
+@import "admin/staff";
+@import "admin/authority";
+@import "admin/pagemeta";
+@import "admin/standard";
+@import "admin/board";
+@import "admin/customer";
+@import "admin/note";
+@import "admin/template";
+@import "admin/announce";
+
+@import "admin/myform";
+@import "admin/chart";
+
+//@import "admin";
+
+

@@ -1,0 +1,441 @@
+// 共通
+@media all {
+    .boards {
+        &__block {
+            &__title {
+            }
+        }
+        &__boxes {
+            margin: 20px;
+        }
+        &__box {
+            display: block;
+            border: 1px solid #999;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            padding: 10px 20px;
+            position: relative;
+            background-color: #f5fff1;
+            cursor: position;
+            color: #333;
+            &:hover {
+                background-color: #e4f9dc;
+                color: #333;
+                text-decoration: none;
+            }
+            &--contact {
+                background-color: #f3f6ff;
+                &:hover {
+                    background-color: #eaefff;
+                }
+            }
+
+            &__name {
+                display: inline-block;
+                margin: 0;
+                margin-bottom: 5px;
+                font-size: 130%;
+                font-weight: bold;
+            }
+            &__unread {
+                display: block;
+                position: absolute;
+                top: -10px;
+                right: -6px;
+                width: 30px;
+                height: 30px;
+                text-align: center;
+                line-height: 32px;
+                padding: 0;
+                margin: 0;
+                background-color: #f00;
+                color: #fff;
+                font-weight: bold;
+                border-radius: 50%;
+            }
+            &__arrow {
+                display: block;
+                position: absolute;
+                top: calc(50% - 15px);
+                right: 10px;
+                height: 30px;
+                .fa {
+                    font-size: 200%;
+                }
+            }
+        }
+        &__lists {
+            @include flexbox();
+            @include flexAlign(center);
+            margin-right: 30px;
+        }
+        &__list {
+            &--img {
+                width: 80px;
+                height: 80px;
+                margin-right: 20px;
+            }
+            &__img {
+                display: block;
+                width: 100%;
+                height: 0;
+                padding-top: 100%;
+                @include bgCover();
+                border-radius: 50%;
+                border: 1px solid #ccc;
+            }
+            &__updated {
+                font-size: 88%;
+            }
+        }
+    }
+
+    .board {
+        &-area {
+            max-width: 800px;
+            background-color: #f9f9f9;
+            border: 2px solid #fff;
+            &__terminal {
+                text-align: right;
+                &__button {
+                    display: inline-block;
+                    cursor: pointer;
+                    &:hover {
+                        opacity: 0.85;
+                    }
+                    .fa {
+                        font-size: 250%;
+                    }
+                    &[data-terminal="1"]{
+                        .fa {
+                            color: yellow;
+                            &:before {
+                                text-shadow: 0 0 3px rgba(0, 0, 0, 0.7);
+                            }
+                        }
+                    }
+                }
+            }
+            &__title {
+                margin-top: 0;
+            }
+        }
+        &__block {
+            box-sizing: border-box;
+        }
+        &__customer {
+            font-size: 90%;
+        }
+        &__title {
+            font-weight: bold;
+        }
+
+        &__content {
+            position: relative;
+            background-color: #d4e3ff;
+            &__bg {
+                position: absolute;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url(/mimamori/img/bgimg_board.png);
+                background-size: 100% auto;
+                @include alpha(30);
+            }
+            &__button {
+                position: relative;
+                z-index: 10;
+                text-align: right;
+                padding: 20px 10px;
+                button {
+                    background-color: #1d9000;
+                    &:hover {
+                        background-color: #186f02;
+                    }
+                }
+            }
+
+            &__boxes {
+                position: relative;
+                z-index: 10;
+            }
+
+            &__box {
+                padding: 10px;
+                &__lists {
+                    width: calc(100% - 60px);
+                    @include flexbox();
+                }
+                &__list {
+                    &--img {
+                        width: 60px;
+                        height: 60px;
+                        margin-right: 20px;
+                    }
+                    &--info {
+                        width: calc(100% - 85px);
+                    }
+                    &__img {
+                        display: block;
+                        @include bgCover();
+                        border-radius: 50%;
+                        border: 1px solid #ccc;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                &__message {
+                    position: relative;
+                    &--customer {
+                    }
+                    &--memo {
+                        margin-left: 100px;
+                        margin-right: 36px;
+                    }
+                    &--staff {
+                        margin-left: 140px;
+                        margin-right: 20px;
+                    }
+                    &__name {
+                        font-size: 12px;
+                        margin-bottom: 3px;
+                        height: 16px;
+                        overflow: hidden;
+                        font-weight: bold;
+                    }
+                    &__body {
+                        min-height: 40px;
+                        margin: 0;
+                        border-radius: 20px;
+                        padding: 11px 20px 9px;
+                        box-sizing: border-box;
+                        position: relative;
+                        z-index: 10;
+                        @include fsize(13);
+                        line-height: 1.5;
+                        letter-spacing: 0.02em;
+                        &--customer {
+                            background-color: #fff;
+                        }
+                        &--memo {
+                            background-color: #d8631e;
+                            color: #fff;
+                        }
+                        &--staff {
+                            background-color: #69e849;
+                        }
+                        a {
+                            &:hover {
+                                opacity: 0.9;
+                            }
+                        }
+                        img {
+                            width: 100%;
+                            max-width: 360px;
+                            height: auto;
+                        }
+                        .deleted {
+                            color: #888;
+                            font-size: 12px;
+                            font-style: italic;
+                        }
+                        &__delete {
+                            position: absolute;
+                            bottom: 3px;
+                            right: 12px;
+                            font-size: 10.5px;
+                            color: blue;
+                            text-decoration: underline;
+                            padding: 1px 3px;
+                            cursor: pointer;
+                            &:hover {
+                                color: red;
+                            }
+                        }
+                    }
+                    &__time {
+                        font-size: 10px;
+                        position: absolute;
+                        width: 50px;
+                        bottom: -5px;
+                        font-weight: bold;
+                        &--customer {
+                            right: -50px;
+                            padding-left: 5px;
+                        }
+                        &--memo {
+                            left: -50px;
+                            padding-right: 5px;
+                            text-align: right;
+                        }
+                        &--staff {
+                            left: -50px;
+                            padding-right: 5px;
+                            text-align: right;
+                        }
+                    }
+                    &__fukidashi {
+                        position: absolute;
+                        z-index: 1;
+                        width: 18px;
+                        height: 18px;
+                        svg {
+                            width: 100%;
+                            height: 100%;
+                        }
+                        &--customer {
+                            top: 30px;
+                            left: -16px;
+                            g {
+                                fill: #fff;
+                            }
+                        }
+                        &--memo {
+                            width: 30px;
+                            height: 30px;
+                            top: 0;
+                            right: -36px;
+                            g {
+                                fill: #d8631e;
+                            }
+                        }
+                        &--staff {
+                            top: 14px;
+                            right: -16px;
+                            transform: scale(-1, 1);
+                            g {
+                                fill: #69e849;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &__input {
+            border: 1px solid #ccc;
+            padding: 10px 5px;
+            &__lists {
+                @include flexbox();
+                @include flexAlign(center);
+            }
+            &__list {
+                width: 100%;
+                &--add {
+                    width: 40px;
+                    &:hover {
+                        .fa {
+                            color: #f00;
+                        }
+                    }
+                }
+                &--input {
+                    margin-right: 20px;
+                    margin-left: 10px;
+                }
+                &--memo {
+                    width: 90px;
+                    input[type="checkbox"] {
+                        transform: scale(1.6);
+                    }
+                }
+                &--submit {
+                    width: 100px;
+                    button {
+                        @include fsize(10);
+                    }
+                }
+                &__add {
+                    background: none;
+                    border: none;
+                    display: inline-block;
+                    width: 100%;
+                    text-align: center;
+                    @include fsize(18);
+                }
+                textarea {
+                    height: 40px;
+                    overflow: visible;
+                }
+            }
+        }
+
+    }
+}
+
+// スマホ
+@media(max-width: 767px) {
+    .board {
+        &__content {
+            &__button {
+                button {
+                    width: 80%;
+                }
+            }
+            &__box {
+                padding: 10px 0;
+                &__lists {
+                    width: calc(100% - 40px);
+                }
+                &__message {
+                    &--customer {
+                    }
+                    &--memo {
+                        margin-left: 50px;
+                        margin-right: 36px;
+                    }
+                    &--staff {
+                        margin-left: 90px;
+                        margin-right: 20px;
+                    }
+                    &__name {
+                        height: 16px;
+                    }
+                    &__body {
+                        margin: 0;
+                        padding: 6px 12px 3px;
+                    }
+                }
+            }
+        }
+        &__input {
+            padding: 10px 5px 0 0;
+            &__list {
+                &--input {
+                    margin-right: 10px;
+                    margin-left: 0;
+                }
+                &--memo {
+                    width: 50px;
+                    input[type="checkbox"] {
+                        transform: scale(1.4);
+                    }
+                    label {
+                        font-size: 80%;
+                    }
+                }
+                &--submit {
+                    width: 90px;
+                    button {
+                        padding: 6px 4px;
+                    }
+                }
+            }
+        }
+    }
+}
+// TAB・PC
+@media(min-width: 768px){
+    .board {
+        &__block {
+            padding: 20px;
+        }
+        &__content {
+            &__box {
+                padding: 10px;
+            }
+        }
+    }
+}

@@ -1,0 +1,47 @@
+// 共通
+@media all {
+    .announce {
+        &__cell {
+            &--date {
+                width: 10%;
+            }
+            &--title {
+                width: 20%;
+            }
+            &--facility {
+                width: 20%;
+            }
+            &--name {
+                width: 10%;
+            }
+        }
+        &__lists {
+            padding: 5px;
+        }
+
+        &__block {
+            margin-bottom: 20px;
+        }
+    }
+
+}
+// スマホ
+@media(max-width: 767px) {
+}
+// TAB・PC
+@media(min-width: 768px){
+    .announce {
+        &__lists {
+            @include flexbox();
+            border-bottom: 1px dotted #ccc;
+        }
+        &__list {
+            &--title {
+                width: 10%;
+            }
+            &--value {
+                width: 90%;
+            }
+        }
+    }
+}

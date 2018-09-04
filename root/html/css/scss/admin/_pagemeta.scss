@@ -1,0 +1,48 @@
+// 共通
+@media all {
+    .pagemeta {
+        &__table {
+            &--edit {
+                th {
+                    width: 20%;
+                }
+            }
+        }
+        &__cell {
+            &--icon {
+                width: 10%;
+            }
+            &__img {
+                display: block;
+                width: 100%;
+                height: 0;
+                padding-top: 100%;
+                @include bgCover();
+            }
+        }
+
+        &__edit {
+            &__icon {
+                @include flexbox();
+                @include flexAlign(center);
+                &__thumbnail {
+                    width: 200px;
+                    height: 200px;
+                    @include bgCover();
+                    border: 1px solid #ccc;
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+}
+
+// スマホ
+@media(max-width: 767px) {
+}
+// TAB
+@media(min-width: 768px) and (max-width: 999px) {
+}
+// PC
+@media(min-width: 1000px){
+}

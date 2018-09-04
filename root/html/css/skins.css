@@ -1,0 +1,220 @@
+body.skin-light {
+  /* search */
+  /* googlemap */
+  /* phpCalendar */
+  /* result */
+}
+body.skin-light .wrapper {
+  background-color: #ecf0f5;
+}
+body.skin-light .block-header {
+  border-top-color: #ccc;
+  border-bottom-color: #ccc;
+}
+body.skin-light .block-header h1 {
+  background-color: #357ca5;
+  color: #fff;
+}
+body.skin-light .block-header a {
+  color: #fff;
+}
+body.skin-light .block-header li {
+  background-color: #3c8dbc;
+  border-left-color: #ccc;
+}
+body.skin-light .block-search {
+  border-color: #ccc;
+  background-color: #fff;
+}
+body.skin-light .block-search #search-date {
+  border-color: #ccc;
+}
+body.skin-light .block-search .elm-submit {
+  background-color: #f39c12;
+  color: #fff;
+}
+body.skin-light .infoCont {
+  background-color: #fff;
+}
+body.skin-light .area-phpCalendar {
+  background-color: #fff;
+}
+body.skin-light .area-phpCalendar .block-phpCalendar {
+  border-color: #ccc;
+}
+body.skin-light .area-phpCalendar .block-phpCalendar .tbl-phpCalendar td {
+  border-color: #ccc;
+}
+body.skin-light .area-phpCalendar .block-phpCalendar .tbl-phpCalendar .elm-title-wday {
+  border-color: #ccc;
+}
+body.skin-light .area-phpCalendar .block-phpCalendar .tbl-phpCalendar .elm-holiday {
+  color: #dd4b39;
+}
+body.skin-light .area-phpCalendar .block-phpCalendar .tbl-phpCalendar .elm-wn0 {
+  color: #dd4b39;
+}
+body.skin-light .area-phpCalendar .block-phpCalendar .tbl-phpCalendar .elm-wn6 {
+  color: #3c8dbc;
+}
+body.skin-light .elm-result-title {
+  border-top-color: #3c8dbc;
+  background-color: #fff;
+}
+body.skin-light .block-result th,
+body.skin-light .block-result td {
+  background-color: #fff;
+  border-top-color: #ccc;
+  border-bottom-color: #ccc;
+}
+body.skin-light .block-result .wn-0 {
+  color: #dd4b39;
+}
+body.skin-light .block-result .wn-6 {
+  color: #3c8dbc;
+}
+body.skin-light .block-result .row-1 td,
+body.skin-light .block-result-detail tbody .row-1 th {
+  background-color: #f3f3f3;
+}
+body.skin-light .block-result thead td,
+body.skin-light .block-result thead th {
+  background-color: #e6e6e6;
+}
+body.skin-light .block-result tr .cel-max {
+  background-color: #ffe1e1;
+}
+body.skin-light .block-result tr .cel-min {
+  background-color: #e1ebff;
+}
+body.skin-light .block-result-detail td,
+body.skin-light .block-result-detail th {
+  border-left-color: #ccc;
+  border-right-color: #ccc;
+}
+body.skin-light .block-footer {
+  background-color: #fff;
+}
+
+body.skin-dark {
+  /* search */
+  /* googlemap */
+  /* phpCalendar */
+  /* result */
+}
+body.skin-dark .wrapper {
+  background-color: #222d32;
+}
+body.skin-dark .block-header {
+  border-top-color: #ccc;
+  border-bottom-color: #ccc;
+}
+body.skin-dark .block-header h1 {
+  background-color: #357ca5;
+  color: #fff;
+}
+body.skin-dark .block-header a {
+  color: #fff;
+}
+body.skin-dark .block-header li {
+  background-color: #3c8dbc;
+  border-left-color: #ccc;
+}
+body.skin-dark .block-search {
+  border-color: #999;
+  background-color: #666;
+}
+body.skin-dark .block-search dt {
+  color: #fff;
+}
+body.skin-dark .block-search dd {
+  color: #ccc;
+}
+body.skin-dark .block-search #search-date {
+  border-color: #ccc;
+  color: #fff;
+}
+body.skin-dark .block-search select {
+  background-color: #444;
+  color: #fff;
+}
+body.skin-dark .block-search select option {
+  color: #fff;
+}
+body.skin-dark .block-search .elm-submit {
+  background-color: #d38304;
+  color: #fff;
+}
+body.skin-dark .infoCont {
+  background-color: #fff;
+}
+body.skin-dark .area-phpCalendar {
+  background-color: #333;
+}
+body.skin-dark .area-phpCalendar .block-phpCalendar {
+  border-color: #777;
+}
+body.skin-dark .area-phpCalendar .block-phpCalendar .tbl-phpCalendar th, body.skin-dark .area-phpCalendar .block-phpCalendar .tbl-phpCalendar td {
+  color: #fff;
+}
+body.skin-dark .area-phpCalendar .block-phpCalendar .tbl-phpCalendar td {
+  border-color: #777;
+}
+body.skin-dark .area-phpCalendar .block-phpCalendar .tbl-phpCalendar .elm-title-wday {
+  border-color: #777;
+}
+body.skin-dark .area-phpCalendar .block-phpCalendar .tbl-phpCalendar .elm-holiday {
+  color: #d3857b;
+}
+body.skin-dark .area-phpCalendar .block-phpCalendar .tbl-phpCalendar .elm-wn0 {
+  color: #d3857b;
+}
+body.skin-dark .area-phpCalendar .block-phpCalendar .tbl-phpCalendar .elm-wn6 {
+  color: #93c7e6;
+}
+body.skin-dark .elm-result-title {
+  border-top-color: #3c8dbc;
+  background-color: #666;
+  color: #fff;
+}
+body.skin-dark .block-result th,
+body.skin-dark .block-result td {
+  background-color: #666;
+  border-top-color: #999;
+  border-bottom-color: #999;
+  color: #fff;
+}
+body.skin-dark .block-result .row-1 td,
+body.skin-dark .block-result-detail tbody .row-1 th {
+  background-color: #555;
+}
+body.skin-dark .block-result .wn-0 {
+  color: #d3857b;
+}
+body.skin-dark .block-result .wn-6 {
+  color: #93c7e6;
+}
+body.skin-dark .block-result thead td,
+body.skin-dark .block-result thead th {
+  background-color: #333;
+}
+body.skin-dark .block-result tr .cel-max {
+  background-color: #7d0a0a;
+}
+body.skin-dark .block-result tr .cel-min {
+  background-color: #103379;
+}
+body.skin-dark .block-result-detail td,
+body.skin-dark .block-result-detail th {
+  border-left-color: #ccc;
+  border-right-color: #ccc;
+}
+body.skin-dark .block-footer {
+  background-color: #666;
+}
+body.skin-dark .block-footer p {
+  color: #fff;
+}
+body.skin-dark .block-footer p a {
+  color: #fff;
+}

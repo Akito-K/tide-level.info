@@ -1,0 +1,158 @@
+// 共通
+@media all {
+    .calendar {
+        display: none;
+        position: absolute;
+//        right: 0;
+//        top: 0;
+        z-index: 120;
+        width: 100%;
+        max-width: 300px;
+        cursor: move;
+        &__block {
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 0 10px 1px #666;
+            position: relative;
+        }
+        &__close {
+            position: absolute;
+            display: block;
+            width: 24px;
+            height: 24px;
+            text-align: center;
+            color: #fff;
+            background-color: #999;
+            line-height: 24px;
+            font-size: 16px;
+            border: 1px solid #aaa;
+            top: -27px;
+            right: 0;
+            cursor: pointer;
+            &:hover {
+                background-color: #888;
+            }
+        }
+        &__head {
+            padding: 6px 3px;
+            background-color: #73cdff;
+            @include flexbox();
+            @include flexJustify(space-between);
+            @include flexAlign(center);
+            &__cell {
+                display: block;
+                text-align: center;
+                padding: 0 5px;
+                &--arrow {
+                    color: #fff;
+                    cursor: pointer;
+                    &:hover {
+                        color: #666;
+                    }
+                }
+                &--year,
+                &--month {
+                    @include fsize(11);
+                    option {
+                        @include fsize(16, 11);
+                    }
+                }
+            }
+            position: relative;
+            &:before,
+            &:after {
+                content: " ";
+                width: 8px;
+                height: 15px;
+                background-color: #73cdff;
+                position: absolute;
+                top: -11px;
+                border-radius: 4px;
+            }
+            &:before {
+                left: 80px;
+            }
+            &:after {
+                right: 80px;
+            }
+        }
+        &__body {
+        }
+        table {
+            width: 100%;
+        }
+        th,
+        td {
+            font-weight: bold;
+        }
+        .wday0 {
+            color: #f00;
+        }
+        .wday6 {
+            color: #00f;
+        }
+        th {
+            @include fsize(11);
+            padding: 3px 0;
+            background-color: #c9eaff;
+            text-align: center;
+        }
+        td {
+            border: 1px solid #f6f6f6;
+            @include fsize(13);
+            padding: 7px 0;
+            cursor: pointer;
+            text-align: center;
+            &.selected {
+                background-color: #ff6;
+            }
+            &:hover {
+                background-color: #ffff9d;
+            }
+            &[data-null="1"] {
+                cursor: default;
+                background-color: inherit;
+            }
+        }
+    }
+
+    .date-input-wrap {
+        @include flexbox();
+        @include flexJustify(space-between);
+        @include flexAlign(center);
+    }
+    .date-input {
+        //width: 46%;
+        position: relative;
+        &--space {
+            width: 6%;
+            text-align: center;
+        }
+        &--next {
+            display: inline-block;
+            width: 50%;
+        }
+        input[readonly] {
+            width: 80%;
+            padding: 4px 8px;
+        }
+        .fa {
+            position: absolute;
+            top: 8px;
+            left: 80%;
+            margin-left: -20px;
+            color: #666;
+        }
+    }
+
+
+}
+// スマホ
+@media(max-width: 767px) {
+}
+// TAB
+@media(min-width: 768px) and (max-width: 999px) {
+}
+// PC
+@media(min-width: 1000px){
+}

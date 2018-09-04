@@ -1,0 +1,30 @@
+.search {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    &__boxes {
+    }
+    &__box {
+        margin-bottom: 20px;
+    }
+    &__param {
+        margin-bottom: 5px;
+        &--place {
+            margin-left: 15px;
+        }
+    }
+    &__weeks {
+        @include flexAlign(center);
+        margin-left: 15px;
+    }
+    &__week {
+        &__param {
+            width: 12.5%;
+            padding: 3px;
+            border: 1px solid #ccc;
+            text-align: center;
+            cursor: pointer;
+        }
+    }
+}

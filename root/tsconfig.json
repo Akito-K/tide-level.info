@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "noImplicitAny": false,
+        "sourceMap": false
+    },
+    "files": [
+        "ts/admin.ts",
+        "ts/script.ts",
+        "ts/config.ts",
+        "ts/func.ts",
+        "ts/holiday.ts",
+        "ts/calendar.ts",
+        "ts/upload.ts",
+        "typings/index.d.ts"
+    ]
+}

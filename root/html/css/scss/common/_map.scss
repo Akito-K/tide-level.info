@@ -1,0 +1,13 @@
+.map {
+    padding: 0 10px;
+    margin-bottom: 10px;
+    &__box {
+        height: 400px;
+    }
+}
+
+.info-window {
+    &__btn {
+        cursor: pointer;
+    }
+}
