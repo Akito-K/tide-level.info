@@ -11,9 +11,9 @@
     <title>{!! $pagemeta->description !!}：{!! $pagemeta->title !!}</title>
 
     <!-- Styles -->
-    <link href="{{ url('') }}/css/AdminLTE/AdminLTE.min.css" rel="stylesheet">
-    <link href="{{ url('') }}/css/AdminLTE/all_skins.min.css" rel="stylesheet">
-    <link href="{{ url('') }}/css/dest/admin.css?{!! time() !!}" rel="stylesheet">
+    <link href="/css/AdminLTE/AdminLTE.min.css" rel="stylesheet">
+    <link href="/css/AdminLTE/all_skins.min.css" rel="stylesheet">
+    <link href="/dist/css/admin.css?{!! time() !!}" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
@@ -33,7 +33,7 @@
         <!-- Main Header -->
         <header class="main-header">
             <!-- Logo -->
-            <a href="{{ url('') }}/admin" class="logo">
+            <a href="/" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
                 <span class="logo-mini"><b>日</b>潮</span>
                 <!-- logo for regular state and mobile devices -->
@@ -116,15 +116,15 @@
     </div><!-- ./wrapper -->
 
     <!-- jQuery 2.1.4 -->
-    <script src="{{ url('') }}/js/plugins/jquery-2.1.4.min.js"></script>
+    <script src="/js/plugins/jquery-2.1.4.min.js"></script>
     <!-- jQuery UI 1.11.4 -->
-    <script src="{{ url('') }}/js/plugins/jquery-ui.min.js"></script>
+    <script src="/js/plugins/jquery-ui.min.js"></script>
 
     <!-- Bootstrap 3.3.5 -->
-    <script src="{{ url('') }}/js/AdminLTE/bootstrap.min.js"></script>
+    <script src="/js/AdminLTE/bootstrap.min.js"></script>
     <!-- AdminLTE App -->
-    <script src="{{ url('') }}/js/AdminLTE/app.min.js"></script>
-    <script src="{{ url('') }}/js/dest/admin.js?{!! time() !!}"></script>
+    <script src="/js/AdminLTE/app.min.js"></script>
+    <script src="/dist/js/admin.js?{!! time() !!}"></script>
 
     <script>
         $('.draggable').draggable();

@@ -6,8 +6,8 @@
     <th colspan="2">満潮</th>
     <th colspan="2">干潮</th>
 </tr>
-@if(!empty($simple_datas))
-    @foreach($simple_datas as $data)
+@if(!empty($datas))
+    @foreach($datas as $data)
         <tr>
             <td>{{ $data->date_at->format('n/j') }} <span class="wday wday-{{ $data->date_at->format('w') }}">{{ \Func::getWeekDay($data->date_at) }}</span></td>
             <td>{{ $data->tide_name }}</td>

@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+  php-web9:
+    image: abece7777/php-73
+    container_name: php-web9
+    working_dir: /var/www
+    ports:
+      - 10089:80
+    links:
+      - mysql9
+    volumes:
+      - "./root:/var/www"
+      - "./docker/php-web/php.ini:/usr/local/etc/php/php.ini"
+      - "./docker/php-web/custom-vhost.conf:/etc/apache2/sites-available/000-default.conf"
+
+  mysql9:
+    image: library/mysql:5.7
+    container_name: mysql9
+    ports:
+      - 13319:3306
+    volumes:
+      - ./docker/mysql/initdb.d:/docker-entrypoint-initdb.d
+    environment:
+      - MYSQL_ROOT_PASSWORD=4j7XLW7h
+      - MYSQL_DATABASE=ai106ixoz6_tide
+      - MYSQL_USER=ai106ixoz6
+      - MYSQL_PASSWORD=4j7XLW7h
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=mysql9
+      - PMA_USER=ai106ixoz6
+      - PMA_PASSWORD=4j7XLW7h
+    links:
+      - mysql9
+    ports:
+      - 14049:80
+    volumes:
+      - ./phpmyadmin/sessions:/sessions

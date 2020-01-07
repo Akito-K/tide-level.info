@@ -1,0 +1,136 @@
+a {
+  color: #2f69b3;
+}
+
+.navi a {
+  color: #fff;
+}
+
+input[readonly],
+select {
+  border-color: #ccc;
+  background-color: #ffffff;
+}
+
+body {
+  color: #333;
+}
+
+.wrapper {
+  background-color: #fff;
+}
+
+.navi__lists {
+  border-top-color: #304a5d;
+  border-bottom-color: #304a5d;
+}
+
+.navi__list {
+  border-right-color: #304a5d;
+}
+
+.navi__list__btn {
+  background-color: #4ab0ff;
+}
+
+h2 {
+  border-top-color: #37a51a;
+  border-bottom-color: #37a51a;
+  background-color: #ddffd4;
+}
+
+.footer__copyright {
+  background-color: #aadaff;
+}
+
+.info-window__btn {
+  color: #00f;
+}
+
+.search {
+  border-color: #aadaff;
+  background-color: #eaf6ff;
+}
+
+.search__week__param {
+  background-color: #ffffff;
+  border-color: #aaa;
+}
+
+.search__week__param.selected {
+  background-color: #ffdfb0;
+  color: #131321;
+}
+
+.tide__simple__box table {
+  border-color: #999;
+}
+
+.tide__simple__box th,
+.tide__simple__box td {
+  border-top-color: #999;
+  border-bottom-color: #999;
+  border-left-color: #999;
+  border-right-color: #999;
+  color: #333;
+}
+
+.tide__simple__box th {
+  background-color: #d6d6d6;
+}
+
+.tide__simple__box tr:nth-child(2n) {
+  background-color: #f3f3f3;
+}
+
+.tide__simple__box tr:nth-child(2n-1) {
+  background-color: #fff;
+}
+
+.tide__detail__box table {
+  border-color: #999;
+}
+
+.tide__detail__box th,
+.tide__detail__box td {
+  border-top-color: #999;
+  border-bottom-color: #999;
+  border-left-color: #999;
+  border-right-color: #999;
+  color: #333;
+}
+
+.tide__detail__box th {
+  background-color: #d6d6d6;
+}
+
+.tide__detail__box tr:nth-child(4n),
+.tide__detail__box tr:nth-child(4n-1) {
+  background-color: #f3f3f3;
+}
+
+.tide__detail__box tr:nth-child(4n-2),
+.tide__detail__box tr:nth-child(4n-3) {
+  background-color: #fff;
+}
+
+.max--simple {
+  background-color: #ffeded;
+}
+
+.max--detail {
+  background-color: #ff2121;
+}
+
+.min--simple {
+  background-color: #edf5ff;
+}
+
+.min--detail {
+  background-color: #2b89ff;
+}
+
+.tide__detail__box td.max--detail,
+.tide__detail__box td.min--detail {
+  color: #fff;
+}

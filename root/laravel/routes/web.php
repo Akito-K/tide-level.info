@@ -13,22 +13,51 @@
 
 Auth::routes();
 
-Route::get ('/',       'homeController@index');
-Route::post('/tide',   'homeController@tide');
-
 Route::group(['middleware' => ['auth']], function () {
-    Route::get ('/admin',                                   'admin\homeController@dashboard');
-    Route::get ('/admin/dashboard',                         'admin\homeController@dashboard');
-
-    Route::get ('/admin/pagemeta',                          'admin\pagemetaController@showList');
-    Route::get ('/admin/pagemeta/create',                   'admin\pagemetaController@create');
-    Route::post('/admin/pagemeta/confirm',                  'admin\pagemetaController@confirm');
-    Route::post('/admin/pagemeta/update',                   'admin\pagemetaController@update');
+    Route::get('phpinfo', function () {
+        phpinfo();
+    });
 });
 
-Route::post('/ajax/upload_file',                            'AjaxController@uploadFile');
-Route::post('/ajax/change_places',                          'AjaxController@changePlaces');
-Route::post('/ajax/change_skin',                            'AjaxController@changeSkin');
+Route::group(['prefix' => 'admin', 'namespace' => 'admin', 'middleware' => ['auth']], function () {
+    Route::group(['prefix' => 'test'], function () {
+        Route::get ('{year}/{place_id}', 'TideController@showTestData');
+    });
+});
+
+
+
+
+Route::get ('',       'homeController@index');
+Route::post('tide',   'homeController@tide');
+
+Route::group(['prefix' => 'admin', 'namespace' => 'admin', 'middleware' => ['auth']], function () {
+    Route::get ('',                             'homeController@dashboard');
+    Route::get ('dashboard',                    'homeController@dashboard')     ->name('admin.dashboard');
+
+    Route::group(['prefix' => 'tide'], function () {
+        Route::get ('{year}',                     'TideController@showList')      ->name('admin.tide.list');
+//        Route::get ('create',                   'TideController@create')        ->name('admin.tide.create');
+//        Route::post('insert',                   'TideController@insert')        ->name('admin.tide.insert');
+//        Route::get ('edit',                     'TideController@edit')          ->name('admin.tide.edit');
+//        Route::post('update',                   'TideController@update')        ->name('admin.tide.update');
+//        Route::post('delete',                   'TideController@delete')        ->name('admin.tide.delete');
+    });
+
+    Route::group(['prefix' => 'pagemeta'], function () {
+        Route::get ('',                         'pagemetaController@showList');
+        Route::get ('create',                   'pagemetaController@create');
+        Route::post('confirm',                  'pagemetaController@confirm');
+        Route::post('update',                   'pagemetaController@update');
+    });
+});
+
+Route::group(['prefix' => 'ajax'], function () {
+    Route::post('upload_file',                  'AjaxController@uploadFile');
+    Route::post('change_places',                'AjaxController@changePlaces');
+    Route::post('change_skin',                  'AjaxController@changeSkin');
+});
+
 
 //Route::get ('/get_tide_datas',   'cronController@getTideDatas');
 //Route::get ('/save_tide_data',   'cronController@saveTideData');

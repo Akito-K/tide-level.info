@@ -8,6 +8,7 @@ use App\Model\Pagemeta;
 use App\Model\Area;
 use App\Model\Place;
 use App\Model\Tide;
+use MyFacade\MyFunctions as Func;
 
 class homeController extends Controller
 {
@@ -17,7 +18,7 @@ class homeController extends Controller
         $place_datas = Place::getDatas();
         $json_place_datas = Place::toPlaceJson($place_datas);
         $place_names = Place::getNames($place_datas, $area_names);
-        $skin = \Func::setSkin($request);
+        $skin = Func::setSkin($request);
         $place_id = 'AK';
         $place_data = Place::getData($place_id);
 
@@ -30,13 +31,13 @@ class homeController extends Controller
         $place_id = $request['place_id'];
         $date_at = $request['hide_date_at'];
         $week = $request['week'];
+        $place = Place::getData($place_id);
 
-        $tide_datas = Tide::getDatas($place_id, $date_at, $week);
+        $tide_datas = Tide::getDatas2($place, $date_at, $week);
+//        Func::var_dump($tide_datas);
+
         $qreki = new \Qreki();
-        $simple_datas = Tide::getSimpleDatas($tide_datas, $qreki);
-        $detail_datas = Tide::getDetailDatas($tide_datas);
-//        \Func::var_dump($simple_datas);
-//        \Func::var_dump($detail_datas);
+        $datas = Tide::getTideDatas($tide_datas, $qreki);
 
         $area_names = Area::getNames();
         if($area_id){
@@ -47,8 +48,8 @@ class homeController extends Controller
         $json_place_datas = Place::toPlaceJson( Place::getDatas() );
         $place_names = Place::getNames($place_datas, $area_names);
         $place_data = Place::getData($place_id);
-        $skin = \Func::setSkin($request);
+        $skin = Func::setSkin($request);
 
-        return view('common.home.tide', compact('pagemeta','skin', 'area_names', 'place_names', 'json_place_datas', 'simple_datas', 'detail_datas', 'place_data'));
+        return view('common.home.tide', compact('pagemeta','skin', 'area_names', 'place_names', 'json_place_datas', 'datas', 'place_data'));
     }
 }

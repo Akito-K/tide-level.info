@@ -31,3 +31,4 @@ root/node_modules/
 *.zip
 *.xml
 *.iml
+.htaccess

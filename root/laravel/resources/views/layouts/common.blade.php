@@ -11,8 +11,8 @@
     <title>{!! $pagemeta->description !!}：{!! $pagemeta->title !!}</title>
 
     <!-- Styles -->
-    <link href="{{ url('') }}/css/dest/style.css" rel="stylesheet">
-    <link href="{{ url('') }}/css/dest/style_{{ $skin }}.css" rel="stylesheet" id="bulletChangeSkin">
+    <link href="/dist/css/style.css" rel="stylesheet">
+    <link href="/dist/css/style_{{ $skin }}.css" rel="stylesheet" id="bulletChangeSkin">
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -67,7 +67,7 @@
 
 </div>
 
-<script src="{{ url('') }}/js/dest/script.js"></script>
+<script src="/dist/js/script.js"></script>
 
 <?php /*
 <script src="/js/jquery-1.11.3.min.js"></script>

@@ -1,50 +1,89 @@
-var nic = 'html';
+var port    = 10089; // docker-composeで指定したport
+var scssDir = './scss';
+var tsDir   = './ts';
+var distDir = './html/dist';
 
-// gulp
 var gulp = require('gulp');
-// webpack
-var webpack = require('gulp-webpack');
-var webpackConfig = require('./webpack.config.js');
-var del = require('del');
-// sass
+var $ = require('gulp-load-plugins')();
 var sass = require('gulp-sass');
+var packageImporter = require('node-sass-package-importer');
+var webpack = require('webpack-stream');
+var del = require('del');
+var webpackConfig = require('./webpack.config.js');
+var browserSync = require('browser-sync').create();
 
-// webpack
-var TS_SRC = './ts/*.ts';
-var JS_DEST = nic+'/js/dest/';
+var scss_sources = [
+    scssDir + '/*.scss',
+    scssDir + '/*/*.scss',
+    scssDir + '/*/*/*.scss'
+];
+var css_dest = distDir + '/css/';
+var ts_sources = [
+    tsDir + '/*.ts',
+    tsDir + '/*/*.ts',
+];
+var js_dest = distDir + '/js/';
 
-gulp.task('clean', function() {
-    del([JS_DEST]);
+
+gulp.task('server', function(){
+    browserSync.init({
+        proxy: 'localhost:' + port
+    });
 });
 
+gulp.task('clean', function() {
+    del(js_dest);
+    del(css_dest);
+});
+
+// webpack(ts)
 gulp.task('webpack', function () {
-    return gulp.src([TS_SRC])
-        .pipe(webpack(webpackConfig))
-        .pipe(gulp.dest(JS_DEST));
+    return gulp.src( ts_sources )
+        .pipe(
+            webpack(webpackConfig)
+                .on('error', function(e){
+                    this.emit('end');
+                })
+        )
+        .pipe(gulp.dest( js_dest ))
+        .pipe(browserSync.stream());
 });
 
 
 // sass
 gulp.task('sass', function() {
-    return gulp.src([
-        nic+'/css/scss/*.scss'
-    ])
-    .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
-//    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-    .pipe(gulp.dest(nic+'/css/dest'));
+    return gulp.src( scss_sources )
+    .pipe(
+        sass(
+            {
+                importer: packageImporter({
+                    extensions: ['.scss', '.css']
+                }),
+                outputStyle: 'expanded',
+//                outputStyle: 'compressed',
+            }
+        )
+        .on('error', sass.logError)
+    )
+    .pipe($.autoprefixer({
+        grid: true,
+    }))
+
+    .pipe(gulp.dest( css_dest ))
+    .pipe(browserSync.stream());
 });
 
 
 // watch
 gulp.task('watch', function() {
-    gulp.watch(TS_SRC, ['webpack']);
-    gulp.watch([
-        nic+'/css/scss/*.scss',
-        nic+'/css/scss/admin/*.scss',
-        nic+'/css/scss/common/*.scss',
-        nic+'/css/scss/styles/*.scss',
-    ], ['sass']);
+    gulp.watch( ts_sources, ['webpack']);
+    gulp.watch( scss_sources, ['sass']);
 });
 
-gulp.task('default', ['webpack', 'sass', 'watch']);
+gulp.task('default', [
+    'server',
+    'webpack',
+    'sass',
+    'watch'
+]);
 

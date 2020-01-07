@@ -1,0 +1,327 @@
+/bin/sh: 1: php: not found
+/bin/sh: 1: php: not found
+/bin/sh: 1: php: not found
+/bin/sh: 1: php: not found
+/bin/sh: 1: php: not found
+/bin/sh: 1: php: not found
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+
+In MyFunctions.php line 533:
+                                                                               
+  file_get_contents(https://www.data.jma.go.jp/kaiyou/data/db/tide/suisan/txt  
+  /2020/HC.txt): failed to open stream: HTTP request failed! HTTP/1.0 404 Not  
+   Found                                                                       
+                                                                               
+
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+
+In MyFunctions.php line 542:
+                                                                               
+  file_get_contents(https://www.data.jma.go.jp/gmd/kaiyou/data/db/tide/suisan  
+  /txt/2020/HC.txt): failed to open stream: HTTP request failed! HTTP/1.0 404  
+   Not Found                                                                   
+                                                                               
+
+Running scheduled command: Closure
+Running scheduled command: Closure
+
+In MyFunctions.php line 542:
+                                                                               
+  file_get_contents(https://www.data.jma.go.jp/gmd/kaiyou/data/db/tide/suisan  
+  /txt/2020/HC.txt): failed to open stream: HTTP request failed! HTTP/1.0 404  
+   Not Found                                                                   
+                                                                               
+
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+Running scheduled command: Closure
+saveTideData：2019-12-31 14:17:04Running scheduled command: Closure
+saveTideData：2019-12-31 14:18:04Running scheduled command: Closure
+saveTideData：2019-12-31 14:19:04Running scheduled command: Closure
+saveTideData：2019-12-31 14:20:03Running scheduled command: Closure
+saveTideData：2019-12-31 14:21:04Running scheduled command: Closure
+saveTideData：2019-12-31 14:22:04Running scheduled command: Closure
+saveTideData：2019-12-31 14:23:03Running scheduled command: Closure
+saveTideData：2019-12-31 14:24:03Running scheduled command: Closure
+saveTideData：2019-12-31 14:25:03Running scheduled command: Closure
+saveTideData：2019-12-31 14:26:03Running scheduled command: Closure
+saveTideData：2019-12-31 14:27:03Running scheduled command: Closure
+saveTideData：2019-12-31 14:28:03Running scheduled command: Closure
+saveTideData：2019-12-31 14:29:03Running scheduled command: Closure
+saveTideData：2019-12-31 14:30:03Running scheduled command: Closure
+saveTideData：2019-12-31 14:31:02Running scheduled command: Closure
+saveTideData：2019-12-31 14:32:03Running scheduled command: Closure
+saveTideData：2019-12-31 14:33:03Running scheduled command: Closure
+saveTideData：2019-12-31 14:34:02Running scheduled command: Closure
+saveTideData：2019-12-31 14:35:03Running scheduled command: Closure
+saveTideData：2019-12-31 14:36:03Running scheduled command: Closure
+saveTideData：2019-12-31 14:37:03Running scheduled command: Closure
+saveTideData：2019-12-31 14:38:03Running scheduled command: Closure
+saveTideData：2019-12-31 14:39:03Running scheduled command: Closure
+saveTideData：2019-12-31 14:40:03Running scheduled command: Closure
+saveTideData：2019-12-31 14:41:03Running scheduled command: Closure
+saveTideData：2019-12-31 14:42:03Running scheduled command: Closure
+saveTideData：2019-12-31 14:43:03Running scheduled command: Closure
+saveTideData：2019-12-31 14:44:03Running scheduled command: Closure
+saveTideData：2019-12-31 14:45:03Running scheduled command: Closure
+saveTideData：2019-12-31 14:46:04 Running scheduled command: Closure
+saveTideData：2019-12-31 14:47:04 KC Running scheduled command: Closure
+saveTideData：2019-12-31 14:48:04 V7 Running scheduled command: Closure
+saveTideData：2019-12-31 14:49:03 ZH Running scheduled command: Closure
+saveTideData：2019-12-31 14:50:03 L6 Running scheduled command: Closure
+saveTideData：2019-12-31 14:51:03 TS（土佐清水）
+In CallbackEvent.php line 105:
+                                                                               
+  A scheduled event name is required to prevent overlapping. Use the 'name' m  
+  ethod before 'withoutOverlapping'.                                           
+                                                                               
+
+SU（片島）
+In CallbackEvent.php line 105:
+                                                                               
+  A scheduled event name is required to prevent overlapping. Use the 'name' m  
+  ethod before 'withoutOverlapping'.                                           
+                                                                               
+
+Running scheduled command: Closure
+saveTideData：2019-12-31 14:54:03 Running scheduled command: Closure
+saveTideData：2019-12-31 14:55:03 UW（宇和島）
+In CallbackEvent.php line 105:
+                                                                               
+  A scheduled event name is required to prevent overlapping. Use the 'name' m  
+  ethod before 'withoutOverlapping'.                                           
+                                                                               
+
+N1（日明）
+In CallbackEvent.php line 105:
+                                                                               
+  A scheduled event name is required to prevent overlapping. Use the 'name' m  
+  ethod before 'withoutOverlapping'.                                           
+                                                                               
+
+
+In CallbackEvent.php line 105:
+                                                                               
+  A scheduled event name is required to prevent overlapping. Use the 'name' m  
+  ethod before 'withoutOverlapping'.                                           
+                                                                               
+
+Running scheduled command: Closure
+saveTideData：2019-12-31 14:59:04 Running scheduled command: Closure
+saveTideData：2019-12-31 15:00:04 N0（砂津）Running scheduled command: Closure
+saveTideData：2019-12-31 15:01:04 MO（門司）Running scheduled command: Closure
+saveTideData：2019-12-31 15:02:03 AH（青浜）Running scheduled command: Closure
+saveTideData：2019-12-31 15:03:03 O3（苅田）No scheduled commands are ready to run.
+Running scheduled command: Closure
+saveTideData：2019-12-31 15:05:03 BP（別府）No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+QC（大分）No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+Running scheduled command: Closure
+saveTideData：2019-12-31 15:10:03 No scheduled commands are ready to run.
+X5（佐伯）No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+Running scheduled command: Closure
+saveTideData：2019-12-31 15:15:03 No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+Z6（細島）No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+Running scheduled command: Closure
+saveTideData：2019-12-31 15:20:04 No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+MG（宮崎）No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+Running scheduled command: Closure
+saveTideData：2019-12-31 15:30:03 No scheduled commands are ready to run.
+AB（油津）No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+Running scheduled command: Closure
+saveTideData：2019-12-31 15:40:03 No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+X6（志布志）No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+Running scheduled command: Closure
+saveTideData：2019-12-31 15:50:03 No scheduled commands are ready to run.
+QG（大泊）No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+Running scheduled command: Closure
+saveTideData：2019-12-31 16:00:03 No scheduled commands are ready to run.
+KG（鹿児島）No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+No scheduled commands are ready to run.
+Running scheduled command: Closure
+saveTideData：2019-12-31 16:10:03 No scheduled commands are ready to run.

@@ -106,7 +106,7 @@ class MyFunctions
             if($format){
                 if(preg_match('/(wday)/', $format)){
                     $result = $datetime_at->format( str_replace('(wday)', '', $format) );
-                    $result .= '(' . \Func::$wdays[ $datetime_at->format('w') ] . ')';
+                    $result .= '(' . self::$wdays[ $datetime_at->format('w') ] . ')';
                 }else{
                     $result = $datetime_at->format($format);
                 }
@@ -119,7 +119,7 @@ class MyFunctions
     }
 
     public static function getWeekDay($datetime){
-        $result = "";
+        $result = 0;
         if($datetime instanceof \Datetime){
             $result = $datetime->format('w');
         }elseif(preg_match('/^[0-9]{4}-[0-9]{1, 2}-[0-9]{1, 2}[.]+/', $datetime)){
@@ -127,7 +127,7 @@ class MyFunctions
             $result = $datetime_at->format('w');
         }
 
-        return \Func::$wdays[$result];
+        return self::$wdays[$result];
     }
 
     /**
@@ -303,14 +303,14 @@ class MyFunctions
         }else{
             $datas = array();
             if(file_exists($dir)){
-                $lists = \Func::scanDir($dir);
+                $lists = self::scanDir($dir);
                 if(!empty($lists)){
                     foreach($lists as $i => $list){
                         $data = new \stdClass();
                         if( is_dir($dir."/".$list) ){
                             $data->name = $list;
                             $data->type = "dir";
-                            $data->list = \Func::scanDirs($dir."/".$list);
+                            $data->list = self::scanDirs($dir."/".$list);
                         }else{
                             $data->name = $list;
                             $data->type = "file";
@@ -331,7 +331,7 @@ class MyFunctions
                 while (false !== ($item = readdir($handle))) {
                     if ($item != "." && $item != "..") {
                         if (is_dir($dir.'/'.$item)) {
-                            \Func::rmDirs($dir.'/'.$item);
+                            self::rmDirs($dir.'/'.$item);
                         } else {
                             unlink($dir.'/'.$item);
                         }
@@ -387,7 +387,7 @@ class MyFunctions
 
     public static function stringToAnchor($str){
         $body = $str;
-        $matches = \Func::getURL($str);
+        $matches = self::getURL($str);
         if(!empty($matches[0])){
             foreach($matches[0] as $url){
                 $replace = '<a href="'.$url.'" target="_blank">'.$url.'</a>';
@@ -491,7 +491,7 @@ class MyFunctions
 
     // LatLng フォーマット
     public static function mylatlng_format($latlng){
-        $ary = \Func::getLatLngAry($latlng);
+        $ary = self::getLatLngAry($latlng);
         $val = 0;
         if(isset($ary['do'])){
             $val += $ary['do'];
@@ -528,25 +528,47 @@ class MyFunctions
         return $ary;
     }
 
-    public static function getTextFile($url, $place_id){
-        if($text = @file_get_contents($url)) {
-            $root_dir = \Func::getRootPath();
-            $path = $root_dir.'/tide_datas';
-            if( !file_exists( $path ) ){
-                mkdir($path);
-            }
-            $path .= '/'.date('Y');
-            if( !file_exists($path) ){
-                mkdir($path);
-            }
-
-            $file_name = $place_id . '.txt';
-            $file_path = $path.'/'.$file_name;
-            $fp = @fopen($file_path, 'w');
-            flock($fp, LOCK_EX);
-            fputs($fp, $text);
-            fclose($fp);
+    public static function getNewTideTextData($place_id, $year){
+        $root_dir      = self::getRootPath();
+        $saved_dirpath = $root_dir . '/tide_datas/' . $year;
+        $filepath      = $saved_dirpath . '/' . $place_id . '.txt';
+        if(file_exists($filepath)){
+            return false;
         }
+
+        $url = 'https://www.data.jma.go.jp/gmd/kaiyou/data/db/tide/suisan/txt/' . $year . '/' . $place_id . '.txt';
+        if( @file_get_contents($url) == false ) {
+            return false;
+        }
+
+        $data = file_get_contents($url);
+
+        return $data;
+    }
+
+    public static function setNewTideTextFile($data, $place_id, $year){
+        if(!$data){
+            return false;
+        }
+
+        $root_dir = self::getRootPath();
+        $save_filepath = $root_dir . '/tide_datas';
+        if( !file_exists( $save_filepath ) ){
+            mkdir($save_filepath);
+        }
+        $save_filepath .= '/' . $year;
+        if( !file_exists($save_filepath) ){
+            mkdir($save_filepath);
+        }
+
+        $filename = $place_id . '.txt';
+        $save_filepath .= '/'.$filename;
+        $fp = fopen($save_filepath, 'w');
+        flock($fp, LOCK_EX);
+        fputs($fp, $data);
+        fclose($fp);
+
+        \Log::debug($place_id);
     }
 
     public static function toTime($str){

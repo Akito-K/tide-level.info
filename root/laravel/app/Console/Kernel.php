@@ -25,15 +25,22 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
+/*
         $schedule->call( function(){
-            cronController::saveTideData();
+            echo 'setNewTideFiles：' . date('Y-m-d H:i:s').' ';
+            $year = date('Y') + 1;
+            cronController::setNewTideFiles($year);
         })
-            ->everyMinute();
+            ->monthly();
 
         $schedule->call( function(){
-            cronController::getTideDatas();
+            echo 'saveTideData：' . date('Y-m-d H:i:s').' ';
+            $year = date('Y') + 1;
+            cronController::saveTideData($year);
         })
-            ->yearly();
+//            ->everyMinute();
+            ->everyTenMinutes();
+*/
     }
 
     /**

@@ -10,10 +10,13 @@
     @endfor
 </tr>
 
-@if(!empty($detail_datas))
-    @foreach($detail_datas as $data)
+@if(!empty($datas))
+    @foreach($datas as $data)
         <tr>
-            <td rowspan="2">{{ $data->date_at->format('n/j') }} <span class="wday wday-{{ $data->date_at->format('w') }}">{{ \Func::getWeekDay($data->date_at) }}</span></td>
+            <td rowspan="2">
+                {{ $data->date_at->format('n/j') }} <span class="wday wday-{{ $data->date_at->format('w') }}">{{ \Func::getWeekDay($data->date_at) }}</span>
+                <span class="tide__name">{{ $data->tide_name }}</span>
+            </td>
             @for($i = 0; $i <= 11; $i++)
                 @include('include.common.detail')
             @endfor

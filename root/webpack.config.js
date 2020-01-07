@@ -3,18 +3,20 @@ var path = require('path');
 var webpack = require('webpack');
 var env = process.env.NODE_ENV;
 let config = {
+    mode: 'development',
+    devtool: 'source-map',
     entry: {
-//        admin :'./ts/admin.ts'
-        script :'./ts/script.ts'
+        'script' :'./ts/script.ts'
+//        'admin'  :'./ts/admin.ts'
     },
     output: {
         filename: '[name].js'
     },
     resolve: {
-        extensions:['', '.ts', '.webpack.js', '.web.js', '.js']
+        extensions:['.ts', '.webpack.js', '.web.js', '.js']
     },
     module: {
-        loaders: [
+        rules: [
             { test: /\.ts$/, loader: 'ts-loader' }
         ]
     },
@@ -22,7 +24,11 @@ let config = {
         new webpack.DefinePlugin({
             'process.env.NODE_ENV' : JSON.stringify(env)
         }),
-        new webpack.optimize.OccurrenceOrderPlugin()
+        new webpack.optimize.OccurrenceOrderPlugin(),
+        // new webpack.ProvidePlugin({
+            // $: 'jquery',
+            // jQuery: 'jquery'
+        // })
     ]
 };
 

@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
+use MyFacade\MyFunctions as Func;
 
 class Place extends Model
 {
@@ -27,8 +28,8 @@ class Place extends Model
     public static function toPlaceJson($datas){
         $ary = [];
         foreach($datas->toArray() as $key => $data){
-            $data['lat'] = \Func::mylatlng_format($data['lat']);
-            $data['lng'] = \Func::mylatlng_format($data['lng']);
+            $data['lat'] = Func::mylatlng_format($data['lat']);
+            $data['lng'] = Func::mylatlng_format($data['lng']);
             $ary[$key] = $data;
         }
 
@@ -44,6 +45,12 @@ class Place extends Model
         }
 
         return $ary;
+    }
+
+    public static function getPlaceNames(){
+        $datas = Place::orderBy('id', 'ASC')->get()->pluck('name', 'place_id');
+
+        return $datas;
     }
 
 }
