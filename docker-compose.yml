@@ -1,9 +1,9 @@
 version: '3'
 
 services:
-  php-web:
+  php-web60002:
     image: niclab/php8.0
-    container_name: php-web9
+    container_name: php-web60002
     working_dir: /var/www
     ports:
       - 60002:80
@@ -12,9 +12,9 @@ services:
       - "./docker/php-web/php.ini:/usr/local/etc/php/php.ini"
       - "./docker/php-web/custom-vhost.conf:/etc/apache2/sites-available/000-default.conf"
 
-  mysql102:
+  mysql60102:
     image: library/mysql:5.7
-    container_name: mysql102
+    container_name: mysql60102
     ports:
       - 60102:3306
     volumes:
@@ -29,11 +29,11 @@ services:
     image: phpmyadmin/phpmyadmin
     environment:
       - PMA_ARBITRARY=1
-      - PMA_HOST=mysql102
+      - PMA_HOST=mysql60102
       - PMA_USER=user
       - PMA_PASSWORD=password
     links:
-      - mysql102
+      - mysql60102
     ports:
       - 60202:80
     volumes:
