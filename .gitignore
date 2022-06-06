@@ -18,17 +18,15 @@
 #   img/*.*
 #   !.png
 
-root/sftp-config.json
-root/html/img/
-root/node_modules/
+datas
+nodejs/node_modules/
 
 *.lnk
 *.tar.gz
-*.pdf
-*.png
-*.jpg
-*.gif
 *.zip
 *.xml
 *.iml
 .htaccess
+.env
+
+_root

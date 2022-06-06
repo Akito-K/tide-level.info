@@ -1,42 +1,40 @@
 version: '3'
 
 services:
-  php-web9:
-    image: abece7777/php-73
+  php-web:
+    image: niclab/php8.0
     container_name: php-web9
     working_dir: /var/www
     ports:
-      - 10089:80
-    links:
-      - mysql9
+      - 60002:80
     volumes:
       - "./root:/var/www"
       - "./docker/php-web/php.ini:/usr/local/etc/php/php.ini"
       - "./docker/php-web/custom-vhost.conf:/etc/apache2/sites-available/000-default.conf"
 
-  mysql9:
+  mysql102:
     image: library/mysql:5.7
-    container_name: mysql9
+    container_name: mysql102
     ports:
-      - 13319:3306
+      - 60102:3306
     volumes:
       - ./docker/mysql/initdb.d:/docker-entrypoint-initdb.d
     environment:
-      - MYSQL_ROOT_PASSWORD=4j7XLW7h
-      - MYSQL_DATABASE=ai106ixoz6_tide
-      - MYSQL_USER=ai106ixoz6
-      - MYSQL_PASSWORD=4j7XLW7h
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=tide
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     environment:
       - PMA_ARBITRARY=1
-      - PMA_HOST=mysql9
-      - PMA_USER=ai106ixoz6
-      - PMA_PASSWORD=4j7XLW7h
+      - PMA_HOST=mysql102
+      - PMA_USER=user
+      - PMA_PASSWORD=password
     links:
-      - mysql9
+      - mysql102
     ports:
-      - 14049:80
+      - 60202:80
     volumes:
-      - ./phpmyadmin/sessions:/sessions
+      - ./docker/phpmyadmin/phpmyadmin-misc.ini:/usr/local/etc/php/conf.d/phpmyadmin-misc.ini
