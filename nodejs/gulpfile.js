@@ -1,30 +1,22 @@
-var port    = 10089; // docker-composeで指定したport
-var scssDir = './scss';
-var tsDir   = './ts';
-var distDir = './html/dist';
+const gulpConfig  = require('./gulp.config.js');
 
-var gulp = require('gulp');
-var $ = require('gulp-load-plugins')();
-var sass = require('gulp-sass');
-var packageImporter = require('node-sass-package-importer');
-var webpack = require('webpack-stream');
-var del = require('del');
-var webpackConfig = require('./webpack.config.js');
-var browserSync = require('browser-sync').create();
+const port        = gulpConfig.port;
+const cssDistDir  = gulpConfig.cssDistDir;
+const jsDistDir   = gulpConfig.jsDistDir;
+const scssSources = gulpConfig.scssSources;
+const tsSources   = gulpConfig.tsSources;
 
-var scss_sources = [
-    scssDir + '/*.scss',
-    scssDir + '/*/*.scss',
-    scssDir + '/*/*/*.scss'
-];
-var css_dest = distDir + '/css/';
-var ts_sources = [
-    tsDir + '/*.ts',
-    tsDir + '/*/*.ts',
-];
-var js_dest = distDir + '/js/';
+let gulp = require('gulp');
+let $ = require('gulp-load-plugins')();
+let sass = require('gulp-sass');
+let packageImporter = require('node-sass-package-importer');
+let webpack = require('webpack-stream');
+let del = require('del');
+let webpackConfig = require('./webpack.config.js');
+let runSequence = require('run-sequence');
+let browserSync = require('browser-sync').create();
 
-
+// Docker
 gulp.task('server', function(){
     browserSync.init({
         proxy: 'localhost:' + port
@@ -32,58 +24,62 @@ gulp.task('server', function(){
 });
 
 gulp.task('clean', function() {
-    del(js_dest);
-    del(css_dest);
+    del( cssDistDir );
+    del( jsDistDir );
 });
 
-// webpack(ts)
+// Webpack
 gulp.task('webpack', function () {
-    return gulp.src( ts_sources )
+    return gulp.src( tsSources )
         .pipe(
             webpack(webpackConfig)
                 .on('error', function(e){
                     this.emit('end');
                 })
         )
-        .pipe(gulp.dest( js_dest ))
+        .pipe(gulp.dest( jsDistDir ))
         .pipe(browserSync.stream());
 });
 
-
-// sass
+// Sass
 gulp.task('sass', function() {
-    return gulp.src( scss_sources )
-    .pipe(
-        sass(
-            {
-                importer: packageImporter({
-                    extensions: ['.scss', '.css']
-                }),
-                outputStyle: 'expanded',
-//                outputStyle: 'compressed',
-            }
+    return gulp.src( scssSources )
+        .pipe(
+            sass(
+                {
+                    importer: packageImporter({
+                        extensions: ['.scss', '.css']
+                    }),
+                    outputStyle: 'expanded',
+                    // outputStyle: 'compressed',
+                }
+            )
+                .on('error', sass.logError)
         )
-        .on('error', sass.logError)
-    )
-    .pipe($.autoprefixer({
-        grid: true,
-    }))
+        .pipe($.autoprefixer({
+            grid: true,
+        }))
 
-    .pipe(gulp.dest( css_dest ))
-    .pipe(browserSync.stream());
+        .pipe(gulp.dest( cssDistDir ))
+        .pipe(browserSync.stream());
 });
 
-
-// watch
+// Watch
 gulp.task('watch', function() {
-    gulp.watch( ts_sources, ['webpack']);
-    gulp.watch( scss_sources, ['sass']);
+    gulp.watch( tsSources, gulp.task( 'webpack' ));
+    gulp.watch( scssSources, gulp.task( 'sass' ));
+    // browserReload();
 });
 
-gulp.task('default', [
-    'server',
-    'webpack',
-    'sass',
-    'watch'
-]);
-
+// Default
+gulp.task( 'default',
+    gulp.series(
+        gulp.parallel(
+            'server',
+            'webpack',
+            'sass',
+            'watch'
+        )
+    ),
+    function(){}
+);

@@ -1,19 +1,14 @@
 'use strict';
 import $ = require("jquery");
-import Func from './func';
-
-import Holiday from './holiday';
-import Calendar from './calendar';
-import Upload from './upload';
-//import Model from './model';
+import Holiday from './modules/holiday';
+import Calendar from './modules/calendar';
+import Tide from './modules/tide';
 
 $(() => {
-//    Func.hoge();
-
     // 休日カレンダー
-    const HOLIDAY = new Holiday.calendar();
+    const HOLIDAY = new Holiday();
     // カレンダー
-    const CALENDAR = new Calendar.MyCalendar();
-    // ドラッグでアップロード
-    const UPLOAD = new Upload.MyUpload();
+    const CALENDAR = new Calendar();
+    // 潮位データ
+    const TIDE = new Tide();
 });

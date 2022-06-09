@@ -1,13 +1,14 @@
 'use strict';
 var path = require('path');
 var webpack = require('webpack');
+const gulpConfig = require('./gulp.config.js');
 var env = process.env.NODE_ENV;
 let config = {
-    mode: 'development',
+    mode: gulpConfig.mode,
     devtool: 'source-map',
     entry: {
-        'script' :'./ts/script.ts'
-//        'admin'  :'./ts/admin.ts'
+        'script' :gulpConfig.tsDir + '/script.ts',
+        'admin'  :gulpConfig.tsDir + '/admin.ts'
     },
     output: {
         filename: '[name].js'
@@ -17,23 +18,39 @@ let config = {
     },
     module: {
         rules: [
-            { test: /\.ts$/, loader: 'ts-loader' }
+            {
+                test: /\.ts$/,
+                use: 'ts-loader'
+            },
+            {
+                test: /\.(css|scss|sass)/,
+                use: [
+                    {
+                        loader: 'css-loader'
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            implementation: require("sass"),
+                            sassOptions: {
+                                fiber: false,
+                            },
+                        },
+                    },
+                ]
+            }
         ]
     },
     plugins: [
         new webpack.DefinePlugin({
             'process.env.NODE_ENV' : JSON.stringify(env)
         }),
-        new webpack.optimize.OccurrenceOrderPlugin(),
-        // new webpack.ProvidePlugin({
-            // $: 'jquery',
-            // jQuery: 'jquery'
-        // })
+        new webpack.optimize.OccurrenceOrderPlugin()
     ]
 };
 
-if (env === 'production') {
-    config.output.filename = '[name].min.js';
+if (gulpConfig.mode === 'production') {
+    // config.output.filename = '[name].min.js';
     config.plugins.push(new webpack.optimize.UglifyJsPlugin({
         compress: {
             warnings: false

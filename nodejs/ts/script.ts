@@ -1,24 +1,17 @@
 'use strict';
 import $ = require("jquery");
-import Func from './func';
-
-import Holiday from './holiday';
-import Calendar from './calendar';
-import Upload from './upload';
-import GoogleMap from './googlemap';
-import Search from './search';
+import Holiday from './modules/holiday';
+import Calendar from './modules/calendar';
+import GoogleMap from './modules/googlemap';
+import Search from './modules/search';
 
 
 $(() => {
-//    Func.hoge();
-
     // 休日カレンダー
-    const HOLIDAY = new Holiday.calendar();
+    const HOLIDAY = new Holiday();
     // カレンダー
-    const CALENDAR = new Calendar.MyCalendar();
-    // ドラッグでアップロード
-    const UPLOAD = new Upload.MyUpload();
+    const CALENDAR = new Calendar();
 
-    const GOOGLEMAP = new GoogleMap.MyGoogleMap();
-    const SEARCH = new Search.MySearch(GOOGLEMAP);
+    const GOOGLEMAP = new GoogleMap();
+    const SEARCH = new Search(GOOGLEMAP);
 });
