@@ -41,21 +41,14 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
 
     // 地点一覧
     Route::get ('place',                    [PlaceController::class, 'showList'])       ->name('admin.place.list');
-    Route::post('place/get_tide',           [PlaceController::class, 'getTide'])        ->name('admin.place.get_tide');
-
-    // 潮位データ有無
-    Route::group(['prefix' => 'tide'], function () {
-        Route::get ('',                     [TideController::class, 'showYearList'])    ->name('admin.tide.year_list');
-        Route::get ('{year}',               [TideController::class, 'showPlaceList'])   ->name('admin.tide.place_list');
-        Route::get ('{year}/{place_id}',    [TideController::class, 'showDetail'])      ->name('admin.tide.detail');
-    });
 });
 
 
 // Ajax
 Route::group(['prefix' => 'ajax'], function () {
-    Route::post('upload_file',      [AjaxController::class, 'uploadFile']);
-    Route::post('change_places',    [AjaxController::class, 'changePlaces']);
-    Route::post('change_skin',      [AjaxController::class, 'changeSkin']);
-    Route::post('get_tide_data',    [AjaxController::class, 'getTideData']);
+    Route::post('upload_file',              [AjaxController::class, 'uploadFile']);
+    Route::post('change_places',            [AjaxController::class, 'changePlaces']);
+    Route::post('change_skin',              [AjaxController::class, 'changeSkin']);
+    Route::post('get_tide_data',            [AjaxController::class, 'getTideData']);
+    Route::post('get_yearly_tide_datas',    [AjaxController::class, 'getYearlyTideDatas']);
 });

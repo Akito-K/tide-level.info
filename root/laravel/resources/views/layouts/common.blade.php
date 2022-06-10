@@ -9,7 +9,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('shared/css/dest/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('shared/css/dest/style_' . $skin . '.css') }}">
+    <link rel="stylesheet" href="{{ asset('shared/css/dest/style_' . $skin . '.css') }}" id="bulletChangeSkin">
 </head>
 
 <body class="">

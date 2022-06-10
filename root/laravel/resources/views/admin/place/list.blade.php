@@ -10,8 +10,12 @@
 
             @forelse($datas as $year => $areas)
                 <h3>{{ $year }}</h3>
+                <button class="btn btn-warning trigGetYearlyTideDatas" type="button" data-year="{{ $year }}">{{ $year }}年全地点の潮位データ取得</button>
 
                 <table class="table table-striped table-bordered">
+                    <caption>
+
+                    </caption>
                     <tr>
                         <th colspan="2">No</th>
                         <th>地点コード</th>

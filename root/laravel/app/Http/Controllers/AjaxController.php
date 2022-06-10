@@ -37,6 +37,30 @@ class AjaxController extends Controller
         return  json_encode($rst);
     }
 
+    public function getYearlyTideDatas(Request $request){
+        $year       = $request['year'];
+        $places = Place::getAreaedPlaceDatas(true, $year);
+        $results = [];
+        $has_error = false;
+        foreach($places as $area){
+            foreach($area as $place) {
+                if($place->has_file){
+                    continue;
+                }
+                $result = $this->downloadTideData($year, $place->code);
+                if($result['error']){
+                    $has_error = true;
+                }
+                $results[] = $result;
+            }
+        }
+
+        return  json_encode([
+            'has_error' => $has_error,
+            'results' => $results,
+        ]);
+    }
+
     public function downloadTideData($year, $place_code){
         $root = Func::getRootPath();
         $filepath = $root . '/tide_datas/' . $year;
@@ -48,8 +72,8 @@ class AjaxController extends Controller
         $url = 'https://www.data.jma.go.jp/kaiyou/data/db/tide/suisan/txt/' . $year . '/' . $place_code . '.txt';
 
         $error = '';
-        $tmp = file_get_contents($url);
-        if (! $tmp){
+        $tmp = @file_get_contents($url);
+        if ( !$tmp ){
             $error = "URL({$url})からダウンロードできませんでした。";
         }else{
             $fp = fopen($filepath, 'w');
@@ -60,7 +84,10 @@ class AjaxController extends Controller
         return [
             'view' => file_exists($filepath) ? '◯':'x',
             'error' => $error,
+            'year' => $year,
+            'place_code' => $place_code,
         ];
     }
+
 
 }

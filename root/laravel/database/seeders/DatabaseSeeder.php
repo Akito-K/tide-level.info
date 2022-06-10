@@ -62,6 +62,7 @@ class DatabaseSeeder extends Seeder
 
         $this->MySeeder('App\Models\Area');
         $this->MySeeder('App\Models\Place');
+        $this->MySeeder('App\Models\User');
 
 
     }

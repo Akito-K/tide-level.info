@@ -3,8 +3,7 @@
 
         <div class="search__box">
             <div class="search__param date-input trigShowCalendar" data-calendar="date">
-                {!! Form::text('date_at', old('date_at', \Func::dateFormat( new \Datetime(), 'Y/n/j(wday)')), ['id' => 'date_at', 'placeholder' => '日付', 'class' => '', 'readonly' => 'readonly']) !!}
-                {!! Form::hidden('hide_date_at', old('hide_date_at', \Func::dateFormat( new \Datetime(), 'Y/n/j')), ['id' => 'hide_date_at']) !!}
+                {!! Form::text('date_at', old('date_at', \Func::dateFormat( new \Datetime(), 'Y/n/j')), ['id' => 'date_at', 'placeholder' => '日付', 'class' => '', 'readonly' => 'readonly']) !!}
                 <i class="fa fa-calendar"></i>から
             </div>
             <div class="search__param search__weeks lists">

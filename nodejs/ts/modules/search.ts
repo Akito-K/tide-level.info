@@ -28,9 +28,12 @@ export class Search {
         });
 
         // Skin 変更
-        $('#trigChangeSkin').click(function(){
+        $('#trigChangeSkin').click(function(e){
+            e.preventDefault();
             const currentSkin = $(this).attr('data-skin');
             self.changeSkin(currentSkin);
+
+            return false;
         });
 
         // Map から検索

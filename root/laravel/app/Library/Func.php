@@ -13,6 +13,18 @@ class Func {
         6 => '土',
     ];
 
+    public static function getWeekDay($datetime){
+        $result = 0;
+        if($datetime instanceof \Datetime){
+            $result = $datetime->format('w');
+        }elseif(preg_match('/^[0-9]{4}-[0-9]{1, 2}-[0-9]{1, 2}[.]+/', $datetime)){
+            $datetime_at = new \Datetime($datetime);
+            $result = $datetime_at->format('w');
+        }
+
+        return self::$wdays[$result];
+    }
+
     public static function getRootPath(){
         return dirname(dirname(dirname(__DIR__)));
     }
@@ -80,4 +92,19 @@ class Func {
 
         return $ary;
     }
+
+    static public function setSkin($request){
+        if($request->session()->has('skin')){
+            $skin = $request->session()->get('skin');
+        }else{
+            $skin = 'dark';
+            if(date('H') >= 5 || date('H') <= 18){
+                $skin = 'light';
+            }
+            $request->session()->put('skin', $skin);
+        }
+
+        return $skin;
+    }
+
 }
