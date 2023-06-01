@@ -8,6 +8,7 @@
     <title>@yield('title', env('APP_NAME'))</title>
 
     <!-- Styles -->
+    <script src="https://kit.fontawesome.com/a6878564e6.js" crossorigin="anonymous"></script>
     <link href="/shared/css/AdminLTE/AdminLTE.min.css" rel="stylesheet">
     <link href="/shared//css/AdminLTE/all_skins.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('shared/css/dest/admin.css') }}">

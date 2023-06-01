@@ -30,7 +30,7 @@ nodejs/node_modules/
 .env
 
 _root
-
+.idea
 root/public_html/shared/css/dest
 root/public_html/shared/js/dest
 root/tide_datas

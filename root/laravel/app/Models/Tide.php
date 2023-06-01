@@ -73,7 +73,9 @@ class Tide extends Model
                     $tide_data->lng
                 );
                 $data->sunrise = new \Datetime('@' . $suninfo['sunrise']);
+                $data->sunrise->setTimezone(new \DateTimeZone('Asia/Tokyo'));
                 $data->sunset = new \Datetime('@' . $suninfo['sunset']);
+                $data->sunset->setTimezone(new \DateTimeZone('Asia/Tokyo'));
 
                 // Moon
                 $moon_age = $Qreki->get_moon(

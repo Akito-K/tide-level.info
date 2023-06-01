@@ -8,6 +8,7 @@
     <title>@yield('title', env('APP_NAME'))</title>
 
     <!-- Styles -->
+    <script src="https://kit.fontawesome.com/a6878564e6.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ asset('shared/css/dest/style.css') }}">
     <link rel="stylesheet" href="{{ asset('shared/css/dest/style_' . $skin . '.css') }}" id="bulletChangeSkin">
 </head>

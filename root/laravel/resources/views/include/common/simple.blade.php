@@ -1,8 +1,8 @@
 <tr>
     <th>日付</th>
     <th>潮</th>
-    <th><i class="fa fa-sun-o"></i></th>
-    <th><i class="fa fa-moon-o"></i></th>
+    <th><i class="fa fa-sun-o" title="日の出"></i></th>
+    <th><i class="fa fa-moon-o" title="日の入"></i></th>
     <th colspan="2">満潮</th>
     <th colspan="2">干潮</th>
 </tr>
